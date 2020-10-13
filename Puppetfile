@@ -1,0 +1,5 @@
+mod 'garethr/docker', '5.3.0'
+mod 'puppetlabs/apt', '3.0.0'
+mod 'puppetlabs/docker_platform', '2.2.1'
+mod 'puppetlabs/stdlib', '4.17.1'
+mod 'stahnma/epel', '1.2.2'
