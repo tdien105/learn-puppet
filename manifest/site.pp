@@ -1,5 +1,5 @@
-	file { '/root/README.md':
-		ensure => file,
-		content => 'hello',
-	}
+file { '/root/README.md':
+	ensure => file,
+	content => 'hello',
+}
 
