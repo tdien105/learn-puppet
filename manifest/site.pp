@@ -9,11 +9,5 @@ class remove_package {
   package { 'docker':
     ensure => 'absent',
   }
-
-  # remove a package and purge its config files
-  package { 'docker':
-    ensure => 'purged',
-  }
-
 }
 include remove_package
