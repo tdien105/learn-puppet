@@ -3,3 +3,4 @@ file { '/root/README.md':
 	content => 'hello Dien',
 }
 
+include 'docker'
