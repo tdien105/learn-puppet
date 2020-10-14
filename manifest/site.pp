@@ -10,4 +10,4 @@ class remove_package {
     ensure => 'absent',
   }
 }
-include remove_package
+include docker
