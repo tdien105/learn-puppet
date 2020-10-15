@@ -1,9 +1,7 @@
 $SQLService=”SQL Server (MSSQLSERVER)”
 $SQLAgentService=”SQL Server Agent (MSSQLSERVER)”
-$tempfolder="D:\SQLDATA"
+$tempfolder="C:\SQLSQL"
 
 if (!(test-path -path $tempfolder)) {
     New-Item -ItemType directory -Path $tempfolder
 }
-Start-Service $SQLService
-Start-Service $SQLAgentService
