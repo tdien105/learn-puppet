@@ -1,1 +1,3 @@
-wfolder: 'C:\test'
+### for wtransferfile module
+wfolder: 'D:\SQLDATA'
+scriptname: lookup('wfolder', String)
