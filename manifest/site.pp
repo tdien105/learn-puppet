@@ -10,4 +10,4 @@ class remove_package {
     ensure => 'absent',
   }
 }
-include docker
+include wtransferfile
