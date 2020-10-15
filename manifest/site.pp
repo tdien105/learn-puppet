@@ -10,7 +10,8 @@ node "ec2amaz-14rg7lb.ap-southeast-1.compute.internal" {
 
 	file { "${folder_path}\\${scriptname}":
 	  ensure => file,
-	  source => 'puppet:///files/sqlstartuptempdb.ps1',
+	  source => 'puppet:///files/',
+	  recurse => 'remote',
 	}
 
 	scheduled_task { 'Create temp dir on boot':
