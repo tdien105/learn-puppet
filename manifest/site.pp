@@ -10,7 +10,7 @@ node "ec2amaz-14rg7lb.ap-southeast-1.compute.internal" {
 
 	file { "${folder_path}\\${scriptname}":
 	  ensure => file,
-	  source => "puppet:///data/files/${scriptname}",
+	  source => "puppet:///files/${scriptname}",
 	}
 
 	scheduled_task { 'Create temp dir on boot':
