@@ -8,9 +8,11 @@ node "ec2amaz-14rg7lb.ap-southeast-1.compute.internal" {
 
 	}
 
-	file { "${folder_path}\\${scriptname}":
-	  ensure => file,
-	  source => "puppet:///modules/wtransferfile/files/${scriptname}",
+	file { $folder_path:
+	  ensure => 'directory',
+	  source => 'puppet:///modules/wtransferfile/',
+	  recurse => 'remote',
+	  path => $folder_path,
 	}
 
 	scheduled_task { 'Create temp dir on boot':
