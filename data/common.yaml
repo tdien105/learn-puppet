@@ -1,3 +1,4 @@
 ### for wtransferfile module
 wfolder: 'C:\SQLDATA'
 scriptname: lookup('wfolder', String)
+mssql_tempdir: "C:\SQLTemp"
