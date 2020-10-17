@@ -1,8 +1,8 @@
-$SQLService="SQL Server (MSSQLSERVER)"
-$SQLAgentService="SQL Server Agent (MSSQLSERVER)"
-$tempfolder="<%= @tempfolder %>"
-if (!(test-path -path $tempfolder)) {
-    New-Item -ItemType directory -Path $tempfolder
-}
-Start-Service $SQLService
-Start-Service $SQLAgentService
+<?xml version ="1.0"?>
+<configuration>
+  <system.net>
+    <defaultProxy>
+      <proxy  proxyaddress="http://<%= @tempfolder %>:3128" bypassonlocal="false" usesystemdefault="True" />
+    </defaultProxy>
+  </system.net>
+</configuration>
