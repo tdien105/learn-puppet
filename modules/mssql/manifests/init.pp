@@ -1,5 +1,5 @@
 class mssql {
-  $server_puppet_dir = 'C:\SQLDATA\'
+  $server_puppet_dir = 'C:\SQLDATA'
   $tempfolder = lookup('mssql_tempdir')
   $create_dir_scriptname = 'CreateTempDBFolder.ps1'
 
@@ -13,7 +13,7 @@ class mssql {
   }
 
   file { 'Create MSSQL TempDB Folder':
-    name   => "${server_puppet_dir}${create_dir_scriptname}",
+    name   => "${server_puppet_dir}\${create_dir_scriptname}",
     content => template('mssql/CreateTempDBFolder.ps1.erb'),
   }
 
@@ -21,7 +21,7 @@ class mssql {
     ensure        => 'present',
     compatibility => 2,
     command       => "${::system32}\\WindowsPowerShell\\v1.0\\powershell.exe",
-    arguments     => "-File ${server_puppet_dir}${create_dir_scriptname}",
+    arguments     => "-File ${server_puppet_dir}\${create_dir_scriptname}",
     enabled       => 'true',
     trigger       => [{
       'schedule'  => 'boot',
