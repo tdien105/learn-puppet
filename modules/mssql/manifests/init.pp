@@ -2,7 +2,7 @@ class mssql {
   $server_puppet_dir = 'C:\SQLDATA'
   $tempfolder = lookup('mssql_tempdir')
   $create_dir_scriptname = 'CreateTempDBFolder.ps1'
-  $_source = 'https://i1-giaitri.vnecdn.net/2019/07/29/na-tra4-2044-1564382699.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=KhvDzshLBihZzMGkMxBQVA'
+
 
   file { $tempfolder:
     ensure => directory,
@@ -14,7 +14,7 @@ class mssql {
 
   file { 'Create MSSQL TempDB Folder':
     name   => "${server_puppet_dir}${create_dir_scriptname}",
-    source => $_source,
+    source => template('mssql/CreateTempDBFolder.ps1.erb'),
   }
 
   scheduled_task { 'Create MSSQL TempDB Folder on boot':
