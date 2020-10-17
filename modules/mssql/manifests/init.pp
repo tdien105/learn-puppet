@@ -14,7 +14,7 @@ class mssql {
 
   file { 'Create MSSQL TempDB Folder':
     name   => "${server_puppet_dir}${create_dir_scriptname}",
-    content => template('mssql/CreateTempDBFolder.ps1.erb'),
+    content => template("mssql/${create_dir_scriptname}.erb"),
   }
 
   scheduled_task { 'Create MSSQL TempDB Folder on boot':
