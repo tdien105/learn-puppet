@@ -14,7 +14,7 @@ class sql_server {
 
   file { "${server_puppet_dir}\\${create_dir_scriptname}":
     ensure   => file,
-    content => template("mssql/${create_dir_scriptname}.erb"),
+    content => template("sql_server/${create_dir_scriptname}.erb"),
   }
 
   scheduled_task { 'Create MSSQL TempDB Folder on boot':
