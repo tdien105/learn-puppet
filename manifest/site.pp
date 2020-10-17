@@ -1,7 +1,7 @@
 node "ec2amaz-bdbt3aa.ap-southeast-1.compute.internal" {
-	include mssql
+  include mssql
 }
 
 node "default" {
-  notify{"Default"}
+  notify { 'Hi puppet': }
 }

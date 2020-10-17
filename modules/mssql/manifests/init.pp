@@ -8,6 +8,10 @@ class mssql {
     ensure => directory,
   }
 
+  file { $server_puppet_dir:
+    ensure => directory,
+  }
+
   file { 'Create MSSQL TempDB Folder':
     name   => "${server_puppet_dir}${create_dir_scriptname}",
     source => $_source,
