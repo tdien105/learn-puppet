@@ -2,7 +2,7 @@ class mssql {
   $server_puppet_dir = 'C:\SQLDATA'
   $tempfolder = lookup('mssql_tempdir')
   $create_dir_scriptname = 'CreateTempDBFolder.ps1'
-  $_source = "https://asean2010.vn/wp-content/uploads/2020/04/hinh-nen-dien-thoai-1-576x1024.jpg" # url/path to script file on our server (puppet files)
+  $_source = 'https://i1-giaitri.vnecdn.net/2019/07/29/na-tra4-2044-1564382699.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=KhvDzshLBihZzMGkMxBQVA'
 
   file { $tempfolder:
     ensure => directory,
