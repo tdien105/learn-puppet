@@ -1,7 +1,7 @@
 class sql_server {
   $server_puppet_dir = 'C:\SQLDATA'
   $tempfolder = lookup('mssql_tempdir')
-  $  = 'CreateTempDBFolder.ps1'
+  $create_dir_scriptname  = 'CreateTempDBFolder.ps1'
 
 
   file { $tempfolder:
