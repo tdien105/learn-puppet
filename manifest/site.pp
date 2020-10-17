@@ -1,36 +1,9 @@
-node "ec2amaz-14rg7lb.ap-southeast-1.compute.internal" {
+node "ec2amaz-bdbt3aa.ap-southeast-1.compute.internal" {
 	
-	$_folder = 'C:\SQLDATA'
-	$_scriptname  = 'sqlstartuptempdb.ps1'
-	$_source = "https://danviet.mediacdn.vn/upload/2-2019/images/2019-05-24/Vi-dau-sieu-pham-hoat-hinh-he-Doraemon-vua-quen-vua-la-unnamed--8--1558666578-width739height559.png"
-
-
-	file { $_folder:
-	  ensure => 'directory',
-	}
-
-	file { "${_folder}\\${_scriptname}":
-	  ensure => file,
-	  source => $_source,
-
-	}
-
-	scheduled_task { 'Create temp dir on boot':
-	  ensure        => 'present',
-	  compatibility => 2,
-	  command       => "$::system32\\WindowsPowerShell\\v1.0\\powershell.exe",
-	  arguments     => "-File ${_folder}\\${_scriptname}",
-	  enabled       => 'true',
-	  trigger       => [{
-	    'schedule'  => 'boot',
-	  }],
-	  user          => 'system',
-	}
+	include sql_server
 
 }
 
 node "default" {
-	notify { 'hello Puppet':
-	  message  => "Hi, there",
-	}
+	notify{"Default"}
 }
